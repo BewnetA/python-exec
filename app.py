@@ -54,3 +54,22 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# this is an emoji convertor function
+
+text = input(">")
+
+def emojiConverter(text):
+        msg = text.split(" ")
+        emoji = {
+                ":)": "😊",
+                ":(": "😢",
+                "love": "😍"
+        }
+        output = ""
+        for ch in msg:
+                output += emoji.get(ch,ch) + " "
+        return output
+
+
+print(emojiConverter(text))
