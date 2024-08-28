@@ -1,0 +1,34 @@
+import random
+
+
+
+word = ["python", "java", "kotlin", "javascript"]
+word = random.choice(word)
+
+guess = ""
+lgth = len(word)
+placeHolder = ["-"]*lgth
+count = 0
+chance = 0
+while count != lgth and chance <= lgth+4:
+
+  print("Guess the word:{}".format(printPH(placeHolder)))
+
+
+  guess = input("> ")
+
+  chance += 1
+
+  if len(guess) < 1 or len(guess) > 1:
+    print("Invalid input")
+  else:
+    for i,ch in enumerate(word):
+      if ch == guess:
+        placeHolder[i] = ch
+        count += 1
+
+
+if count == lgth:
+  print("You won the word was: {}".format(printPH(placeHolder)))
+else:
+  print("You lost")
